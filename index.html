@@ -1,0 +1,209 @@
+<!DOCTYPE html>     
+
+<html>
+    <head>
+        <title>vaughndugas.dev</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="icon" type="image/x-icon" href="images/icons/favicon.jpg">
+    </head>
+    
+    <body>
+        <!-- Site Header -->
+        <header class="site_header">
+            <h1>Vaughn Dugas</h1>
+            <h2>Game Design Portfolio</h2>
+        </header>
+
+        <!-- About Me -->
+        <div class="about_me">
+            <header class="section_header">ABOUT ME</header>
+
+            <img src="images/portfolio-polaroid-2.png" style="width:25%";>
+            
+            <p>I'm a Programmer and Project Leader studying Game Design at Rider University. You can see the games I've worked on below.</p>
+
+            <p>I've been studying programming since 2020 and I'm proficient in JavaScript, C#, Python, GDScript, Blueprints (Unreal), Lua, HTML and CSS. On top of that, I have a strong understanding of Computer Science principles. I love to push myself and build off of my mistakes.</p>
+
+            <p>My love for video games goes back longer than I can even remember. This medium has had a massive impact on me, and I have so much passion to push it farther.</p>
+
+            <div class="icon_links">
+                <img src="images/icons/email.png" title="Email" onclick="openLink('email')" style="width:3%">
+
+                <img src="images/icons/linkedin.webp" title="LinkedIn" onclick="openLink('linkedin')" style="width:2%">
+
+                <img src="images/icons/itchio.png" title="Itch.io" onclick="openLink('itch')" style="width:3%">
+            </div>
+        </div>
+
+        <!-- Project Gallery -->
+        <header class="section_header">PROJECTS</header>
+
+        <div class="project_gallery">
+            <div class="gallery_container" onclick="openProjectContainer('seenoevil')" >
+                <img src="images/seenoevil/sne_gallery.png" style="width:100%; height:100%">
+
+                <div class="gallery_overlay">
+                    <p>See No Evil (2026)</p>
+                </div>
+            </div>
+
+            <div class="gallery_container" onclick="openProjectContainer('makemeasandwich')" >
+                <img src="images/mmas/mmas_gallery.png" style="width:100%; height:100%">
+                    
+                <div class="gallery_overlay">
+                    <p>Make Me a Sandwich! (2026)</p>
+                </div>
+            </div>
+
+            <div class="gallery_container" onclick="openProjectContainer('wasted')">
+                <img src="images/wasted/wasted_gallery.png" style="width:100%; height:100%">
+
+                <div class="gallery_overlay">
+                    <p>Wasted (2025)</p>
+                </div>
+            </div>
+        </div>
+        
+<!-- PROJECT CONTAINERS -->
+
+    <!-- SEE NO EVIL -->
+        <div id="seenoevil" class="project_container">
+            <!-- Project Title -->
+            <div class="project_title" id="title">See No Evil</div>
+
+            <!-- Roles & Tools -->
+            <div class="project_subtitle">
+                <div class="project_subtitle_item" onclick="openLink('seenoevil')" style="cursor: pointer;">
+                    <p>Link</p>
+                    <img src="images/icons/link.png" style="width:40px">
+                </div>
+                <div class="project_subtitle_item">Role: Solo Dev</div>
+                <div class="project_subtitle_item">Tools: Unreal Engine 5</div>
+            </div>
+
+             <div class="project_flexbox">
+                <img src="images/seenoevil/sne_1.png" style="width:50%">
+                <p>See No Evil was made for my 3D Game Design class in Unreal Engine 5, using Blueprints. It's a first-person, survival horror game with invisible monsters.</p>
+            </div>
+
+            <div class="project_flexbox">
+                <p>While the monsters themselves are not directly visible, the ways they affect the world are. For example, any lights near a monster will begin to flicker on and off. The player can use this to determine their rough location.</p>
+                <img src="images/seenoevil/sne_2.png" style="width:50%">
+            </div>
+
+            <div class="project_flexbox">
+                <img src="images/seenoevil/sne_3.png" style="width:50%">
+                <p>I had a lot of fun working in Unreal and fleshing out my idea for the game into a vertical slice. At some point, I would like to come back and redo all the code in C# instead of Blueprints.</p>
+            </div>
+        </div>
+        
+
+    <!-- MAKE ME A SANDWICH -->
+        <div id="makemeasandwich" class="project_container">
+            <!-- Project Title -->
+            <div class="project_title" id="title">Make Me a Sandwich!</div>
+
+            <!-- Roles & Tools -->
+            <div class="project_subtitle">
+                <div class="project_subtitle_item" onclick="openLink('mmas')" style="cursor: pointer;">
+                    <p>Link</p>
+                    <img src="images/icons/link.png" style="width:40px">
+                </div>
+                <div class="project_subtitle_item">Role: Programmer</div>
+                <div class="project_subtitle_item">Tools: Godot</div>
+            </div>
+                
+            <div class="project_flexbox">
+                <img src="images/mmas/mmas_1.png" style="width:50%">
+                <p>Make Me a Sandwich! was made ~48 hours for my school's annual Game Jam. My two teammates did all of the art for the game, while I did all the programming in GDScript. <br><br>I also did the level design and mechanic design.</p>
+            </div>
+
+            <div class="project_flexbox">
+                <p>I think my best code was for the spiderweb bounce pads in the cabinet section. I used enums and exported variables to streamline the level design process by making variables like launch speed and launch angle directly editable from the viewport.</p>
+                <img src="images/mmas/mmas_2.png" style="width:50%">
+            </div>
+
+            <div class="project_flexbox">
+                <img src="images/mmas/mmas_3.png" style="width:50%">
+                <p>I'm extremely happy with the final product considering it was my first game jam. Although, I think I could've been better at implementing all the art my teammates made, as a few assets didn't make it into the final submission.</p>
+            </div>
+        </div>
+
+
+    <!-- WASTED -->
+        <div id="wasted" class="project_container">
+            <!-- Project Title -->
+            <div class="project_title" id="title">WASTED</div>
+
+            <!-- Roles & Tools -->
+            <div class="project_subtitle">
+                <div class="project_subtitle_item" onclick="openLink('wasted')" style="cursor: pointer;">
+                    <p>Link</p>
+                    <img src="images/icons/link.png" style="width:40px">
+                </div>
+                <div class="project_subtitle_item">Role: Solo Dev</div>
+                <div class="project_subtitle_item">Tools: Godot</div>
+            </div>
+                
+            <div class="project_flexbox">
+                <img src="images/wasted/wasted_1.png" style="width:50%">
+                <p>Wasted was made for my 2D Game Design class using Godot, and primarily coded in GDScript (I used GLSL  for the shaders). <br><br> The idea was to create the modern equivalent of <i>Drunken Master (1978)</i> starring Jackie Chan, if you've ever seen that.</p>
+            </div>
+
+            <div class="project_flexbox">
+                <p>I had a lot of fun making the drunk effect shader using GLSL. It scales with the amount the player drinks, which caused sudden jumps in the effect after every drink. I fixed it by interpolating between the old value and the new value whenever the drink count is updated.</p>
+                <img src="images/wasted/wasted_2.png" style="width:50%;">
+            </div>
+                
+            <div class="project_flexbox">
+                <img src="images/wasted/wasted_3.png" style="width:50%">
+                <p>This was my first experience with a modern game engine, so most of time with this project was spent translating what I knew from my Computer Science classes in High School into Godot.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Vaughn Dugas &#169 2026</p>
+        </footer>
+
+
+<!-- JAVASCRIPT -->
+        <script>
+            const projects = document.getElementsByClassName("project_container");
+
+            function openProjectContainer(name) {
+                /* Basically, close all containers except the one given. */
+                for (let i = 0; i <  projects.length; ++i) {
+                    if (projects[i].id != name) {
+                        projects[i].style.display = "none";
+                    } else {
+                       projects[i].style.display = "block";
+                    }
+                }
+            }
+
+            /* This can technically be done directly from clickon="...", but the link shows up red even though it isn't an error and that makes me upset. */
+            function openLink(link) {
+                switch(link) {
+                    case "email":
+                        window.open("mailto:vaughnrobertdugas@gmail.com");
+                        break;
+                    case "linkedin":
+                        window.open("https://www.linkedin.com/in/vaughn-dugas-24093a315/", "_blank");
+                        break;
+                    case "itch":
+                        window.open("https://v1ktorvaughn.itch.io/", "_blank");
+                        break;
+                    case "seenoevil":
+                        window.open("google.com", "_blank");
+                        break;
+                    case "mmas":
+                        window.open("https://v1ktorvaughn.itch.io/make-me-a-sandwich", "_blank");
+                        break;
+                    case "wasted":
+                        window.open("https://v1ktorvaughn.itch.io/wasted", "_blank");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

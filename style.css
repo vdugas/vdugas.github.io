@@ -1,0 +1,314 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Initialize Custom Fonts */
+
+@font-face {
+    font-family: BBHHegarty;
+    src: url(fonts/BBHHegarty-Regular.ttf);
+}
+
+@font-face {
+    font-family: BBHBartle;
+    src: url(fonts/BBHBartle-Regular.ttf);
+}
+
+@font-face {
+    font-family: BBHBogle;
+    src: url(fonts/BBHBogle-Regular.ttf);
+}
+
+@font-face {
+    font-family: GoogleSans;
+    src: url(fonts/GoogleSans.ttf);
+}
+
+@font-face {
+    font-family: SpecialGothic;
+    src: url(fonts/SpecialGothicExpanded.ttf);
+}
+
+/* Initialize Animations */
+
+@keyframes headerFadeInAnim {
+    0%   {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes projectSelectAnim {
+    0%   {opacity: 0; padding-top: 20%;}
+    100% {opacity: 1; padding-top: 0%;}
+}
+
+/* General Stuff */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(28, 28, 30);
+}
+
+.section_header {
+    text-align: center;
+
+    font-family: BBHHegarty;
+    font-size: 60px;
+    font-weight: 5;
+    letter-spacing: 2px;
+
+    padding-bottom: 2%;
+}
+
+/* Header */
+
+.site_header {
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 12%;
+
+    /* Banner image */
+    background-image: url(images/banner.JPG);
+    background-size: cover;
+
+    /* Parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Feather bottom of the image */
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+
+    /* Fade in animation when the page is first loaded */
+    animation-name: headerFadeInAnim;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
+}
+
+.site_header h1 {
+    /* Text style */
+    font-family: BBHBartle;
+    font-size: 80px;
+    font-weight: 5;
+    
+    /* Text shadow */
+    text-shadow: 2px 2px 20px black;
+}
+
+.site_header h2 {
+    /* Text style */
+    font-family: BBHBogle;
+    font-size: 50px;
+    font-weight: 5;
+    letter-spacing: 5px;
+
+    /* Text shadow */
+    text-shadow: 2px 2px 20px black;
+}
+
+/* About Me */
+
+.about_me {
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    text-align: center;
+}
+
+.about_me p {
+    font-family: GoogleSans;
+    font-size: 30px;
+    line-height: 130%;
+
+    text-align: justify;
+    text-justify: newspaper;
+
+    text-indent: 8%;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.icon_links {
+    padding-top: 2%;
+
+    /* Display links as a flex box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+}
+
+.icon_links a {
+    flex: 1 0 200px;
+    text-decoration: none;
+}
+
+.icon_links img {
+    float: left;
+
+    cursor: pointer;
+}
+
+/* Project Gallery */
+
+.project_gallery {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    padding-bottom: 6%;
+}
+
+.project_gallery::-webkit-scrollbar {
+    height: 20px;
+}
+
+.project_gallery::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+.project_gallery::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease;
+}
+
+.project_gallery::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.gallery_container {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+    /* Project thumbnail size */
+    aspect-ratio: 5 / 3;
+    width: 30%;
+
+    cursor: pointer;
+
+    /* Transition */
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.gallery_container img {
+    opacity: 1;
+    border-radius: 12px;
+    
+    object-fit: cover;
+}
+
+.gallery_overlay {
+    /* Text style */
+    font-family: GoogleSans;
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+
+    /* Background box style */
+    background-color: rgb(40, 40, 40);
+    border-radius: 8px;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+    /* Center text on gallery image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    /* Transitions */
+    transition: opacity 0.25s, font-size 0.3s;
+}
+
+.gallery_container:hover {
+    width: 33%;
+}
+
+.gallery_container:hover img {
+    opacity: 0.8;
+}
+
+.gallery_container:hover .gallery_overlay {
+    opacity: 1;
+    font-size: 28px;
+}
+
+/* Project Container */
+
+.project_container {
+    display: none;
+
+    /* Slide up animation when a project from the gallery is selected */
+    animation-name: projectSelectAnim;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+}
+
+.project_title {
+    font-family: BBHBartle;
+    font-weight: 50;
+    font-size: 90px;
+    text-align: center;
+}
+
+.project_subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    font-family: BBHBogle;
+    font-size: 40px;
+
+    padding-bottom: 8%;
+}
+
+.project_subtitle_item {
+    display: flex;
+    align-items: center;
+    float: left;   
+
+    max-height: 50px;
+}
+
+.project_flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    font-family: GoogleSans;
+    font-size: 34px;
+    text-indent: 8%;
+    text-align: justify;
+
+    padding-bottom: 5%;
+}
+
+.project_flexbox img {
+    border-radius: 20px;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.project_flexbox p {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+/* Footer */
+.footer p {
+    font-family: GoogleSans;
+    font-size: 24px;
+    text-align: center;
+}
